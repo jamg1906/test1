@@ -1,0 +1,74 @@
+﻿@model IEnumerable<LAB_2___ABB.Models.DrugOrderModel>
+
+@{
+    ViewBag.Title = "Cart";
+}
+
+<h2>Cart</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DrugName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Producer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Stock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DrugName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stock)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+                <br />
+                @Html.DisplayFor(modelItem => item.Address)
+                <br />
+                @Html.DisplayFor(modelItem => item.Nit)
+                <br />
+
+
+                <b>TOTAL $</b>
+                <b>
+                    @Html.DisplayFor(modelItem => item.Total)
+                </b>
+
+            </td>
+        </tr>
+
+    }
+
+</table>
+
+<p>
+    @Html.ActionLink("New order", "Index")
+</p>
+
